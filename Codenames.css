@@ -190,6 +190,7 @@ button {
     border-radius: 10px;
     background-color: #0b61a1;
     border: #078ad6 solid 5px;
+    padding: 0;
 }
 
 .guess {
@@ -211,6 +212,7 @@ button {
 
 .num-guesses {
     display: flex;
+    margin-top: 3vh;
 }
 
 .buttons-wrapper {
@@ -264,8 +266,10 @@ button {
     border: #000 solid 2px;
 }
 
+#save {
+    margin: 5vh 0 2vh 0;
+}
 #cancel-modal, #save {
-    margin-top: 5vh;
     font-family: "Goldman", sans-serif;
     font-size: 4vh;
     background-color: #0965bc;
@@ -274,15 +278,15 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15%;
-    height: 10%;
-    padding: 4px;
+    width: 16%;
+    height: 11%;
+    padding: 5px;
     transition: background-color 0.3s ease;
 }
 
 
 
-#cancel-modal, #save:hover {
+#cancel-modal:hover, #save:hover {
     background-color: #0e77d1;
 }
 
