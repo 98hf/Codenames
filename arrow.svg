@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="123.66688mm"
+   height="72.645691mm"
+   viewBox="0 0 123.66688 72.645691"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-42.11395,-94.87486)">
+    <path
+       id="path3"
+       style="fill:#FFFF;stroke-width:0.097595;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0;paint-order:stroke fill markers"
+       d="m 103.94739,94.874864 -61.833438,59.936396 12.319144,12.7093 49.514294,-47.99552 49.51429,47.99552 12.31915,-12.7093 z" />
+  </g>
+</svg>

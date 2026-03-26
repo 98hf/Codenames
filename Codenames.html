@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Goldman:wght@400;700&display=swap');
+    </style>
+    <title>Codenames</title>
+    <link rel="stylesheet" href="Codenames.css">
+</head>
+<body>
+    <section class="spymaster">
+        <div class="spymaster-modal">
+            <div class="guess">
+                <div class="given-word">
+                    <h1>Code word:</h1>
+                    <label>
+                        <input id="code-word" type="text" maxlength="20">
+                    </label>
+                </div>
+                <div class="num-guesses">
+                    <h1 id="guess-editor">Number of guesses: 0</h1>
+                        <div class="buttons-wrapper">
+                            <button id="up" onclick="guess(1)">
+                                <img src="arrow.svg" width="20px" alt="+">
+                            </button>
+                            <button id ="down" onclick="guess(-1)">
+                                <img src="arrow.svg" style="transform: scaleY(-1);" width="20px" alt="-">
+                            </button>
+                        </div>
+                </div>
+            </div>
+            <button id="save" onclick="save()">Save</button>
+            <button id="cancel-modal" onclick="closeModal()">Cancel</button>
+        </div>
+    </section>
+    <button id="guess-setup" onclick="openModal()">G</button>
+    <div class="scores">
+        <h1 id="red">RED 0</h1>
+        <h1 id="blue">BLUE 0</h1>
+    </div>
+    <div class = "top-container">
+        <h1 id="title">CODENAMES</h1>
+        <button onclick=toggle() id="toggle">Operative</button>
+        <div id="Gcontainer">
+            <h1 id="guessesT">Guesses:</h1>
+            <h1 id="guesses">0</h1>
+        </div>
+    </div>
+    <div class="word-container">
+        <h1 id="cw"></h1>
+        <div id="words">
+        </div>
+    </div>
+</body>
+<script src="Codenames.js"></script>
+</html>
