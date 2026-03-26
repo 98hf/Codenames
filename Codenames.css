@@ -164,25 +164,6 @@ button {
     cursor: default;
 }
 
-.word-button.red:hover {
-    background-color: #ae0505;
-    border-color: #da0404;
-}
-
-.word-button.blue:hover {
-    background-color: #0366a3;
-    border-color: #0788dc;
-}
-
-.word-button.blank:hover {
-    background-color: #939393;
-    border-color: #c1c0c0;
-}
-
-.word-button.black:hover {
-    background-color: #303030;
-}
-
 .spymaster {
     display: none;
     z-index: 4;

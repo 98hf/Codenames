@@ -46,11 +46,12 @@ for (let i = 0; i < wordI.length; i++) {
     button.classList.add("word-button");
     button.dataset.reveal = false;
     button.onclick = () => reveal(button);
+    button.style.pointerEvents = "none";
     container.appendChild(button);
 }
 
 function reveal(button) {
-    if(numberG >=1) {
+    if(numberG >=1 && button.dataset.reveal === "false") {
         numberG -= 1;
         document.getElementById("cw").innerHTML = codeWord;
         document.getElementById("guesses").innerHTML = numberG;
@@ -69,6 +70,15 @@ function reveal(button) {
             }
         }
     }
+    if(numberG <=0) {
+        setTimeout(() => {
+            //Goes through all buttons and removes pointer effects
+            const buttons = document.querySelectorAll(".word-button");
+            buttons.forEach(button => {
+                button.style.pointerEvents = "none";
+            });
+        }, 300);
+    }
 }
 
 function toggle(){
@@ -86,8 +96,6 @@ function toggle(){
         document.getElementById("guess-setup").style.display="none";
     } else if (document.getElementById("toggle").textContent === "Operative"){
         //Go to spymaster
-        codeWord = ""
-        document.getElementById("cw").innerHTML = codeWord;
         document.getElementById("toggle").textContent="Spymaster";
         document.getElementById("guess-setup").style.display="block";
 
@@ -100,7 +108,9 @@ function toggle(){
         //If button isn't clicked and it's colored
         if (button.classList.contains(originalColor) && button.dataset.reveal === "false") {
             button.classList.remove(originalColor);
-            button.style.pointerEvents = "none";
+            if(numberG >=1) {
+                button.style.pointerEvents = "auto";
+            }
         } else {
             button.classList.add(originalColor);
             button.style.pointerEvents = "none";
@@ -110,9 +120,6 @@ function toggle(){
 
 
 let numberG = 0;
-//Startup look
-document.getElementById("down").style.backgroundColor = "#0b50d8";
-
 function guess(x){
     if(numberG+x <= 5 && numberG+x >=1){
             document.getElementById("guess-editor").innerHTML = "Number of guesses: " + (numberG+x);
@@ -147,6 +154,7 @@ function save() {
 
 function openModal(){
     numberG = 1;
+    document.getElementById("down").style.backgroundColor = "#0b50d8";
     document.getElementById("guess-editor").innerHTML = "Number of guesses: " + numberG;
     document.querySelector(".spymaster").style.display = "block";
 }
